@@ -3,78 +3,66 @@ import { useEffect, useState } from "react";
 import "./DashboardHeader.css";
 
 const DashboardHeader = () => {
+  const [currentTime, setCurrentTime] = useState(new Date());
 
-    const [currentTime, setCurrentTime] = useState(new Date());
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
 
-    useEffect(() => {
+    return () => clearInterval(timer);
+  }, []);
 
-        const timer = setInterval(() => {
-            setCurrentTime(new Date());
-        }, 1000);
+  // Get logged-in user
+  const storedUser = JSON.parse(
+    localStorage.getItem("medcare-user") || "null"
+  );
 
-        return () => clearInterval(timer);
+  const userName = storedUser?.name || "Admin User";
 
-    }, []);
+  const greeting = () => {
+    const hour = currentTime.getHours();
 
-    const greeting = () => {
+    if (hour < 12) return "Good Morning";
+    if (hour < 17) return "Good Afternoon";
+    return "Good Evening";
+  };
 
-        const hour = currentTime.getHours();
+  const time = currentTime.toLocaleTimeString("en-IN", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
 
-        if (hour < 12) return "Good Morning";
-        if (hour < 17) return "Good Afternoon";
-        return "Good Evening";
-    };
+  const day = currentTime.toLocaleDateString("en-US", {
+    weekday: "long",
+  });
 
-    const time = currentTime.toLocaleTimeString("en-IN", {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-    });
+  const date = currentTime.toLocaleDateString("en-US", {
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  });
 
-    const day = currentTime.toLocaleDateString("en-US", {
-        weekday: "long",
-    });
+  return (
+    <section className="dashboard-header">
+      <div className="dashboard-header-content">
+        <h1 className="dashboard-header-title">
+          {greeting()}, {userName}
+        </h1>
 
-    const date = currentTime.toLocaleDateString("en-US", {
-        month: "short",
-        day: "2-digit",
-        year: "numeric",
-    });
+        <p className="dashboard-header-subtitle">
+          Here's what's happening at MedCare Hospital today.
+        </p>
+      </div>
 
-    return (
-
-        <section className="dashboard-header">
-
-            <div className="dashboard-header-content">
-
-                <h1 className="dashboard-header-title">
-
-                    {greeting()}
-
-                </h1>
-
-                <p className="dashboard-header-subtitle">
-
-                    Here's what's happening at Medicare Hospital today.
-
-                </p>
-
-            </div>
-
-            <div className="dashboard-header-clock">
-
-                <h2>{time}</h2>
-
-                <span>{day}</span>
-
-                <small>{date}</small>
-
-            </div>
-
-        </section>
-
-    );
-
+      <div className="dashboard-header-clock">
+        <h2>{time}</h2>
+        <span>{day}</span>
+        <small>{date}</small>
+      </div>
+    </section>
+  );
 };
 
 export default DashboardHeader;

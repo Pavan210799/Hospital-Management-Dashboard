@@ -1,10 +1,10 @@
-import {
-  FaBell,
-  FaCircleUser,
-} from "react-icons/fa6";
+import { useState } from "react";
+import { FaBell, FaCircleUser } from "react-icons/fa6";
 
 import ThemeToggle from "../layout/ThemeToggle/ThemeToggle";
 import Header from "../layout/Header/Header";
+import NotificationDrawer from "../common/NotificationDrawer/NotificationDrawer";
+import notificationsData from "../common/NotificationDrawer/notifications";
 
 import "./DashboardTopBar.css";
 
@@ -14,6 +14,11 @@ const DashboardTopBar = ({
   showDate = false,
   onOpenProfile,
 }) => {
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+  const [notifications, setNotifications] = useState(notificationsData);
+
+  const unreadCount = notifications.filter((n) => n.unread).length;
+
   const today = new Date();
 
   const day = today.toLocaleDateString("en-US", {
@@ -27,44 +32,53 @@ const DashboardTopBar = ({
   });
 
   return (
-    <div className="dashboard-topbar">
-      <div className="dashboard-topbar-left">
-        <Header setSidebarOpen={setSidebarOpen} />
-        <h2 className="dashboard-page-title">
-          {title}
-        </h2>
-      </div>
+    <>
+      <Header
+        title={title}
+        setSidebarOpen={setSidebarOpen}
+      >
+        <div className="dashboard-topbar-actions">
+          {showDate && (
+            <div className="dashboard-topbar-date">
+              <span className="dashboard-topbar-day">
+                {day}
+              </span>
+              <span className="dashboard-topbar-full-date">
+                {date}
+              </span>
+            </div>
+          )}
 
-      <div className="dashboard-topbar-actions">
-        {showDate && (
-          <div className="dashboard-topbar-date">
-            <span className="dashboard-topbar-day">
-              {day}
-            </span>
-            <span className="dashboard-topbar-full-date">
-              {date}
-            </span>
-          </div>
-        )}
+          <button
+            className="dashboard-topbar-icon"
+            onClick={() => setIsNotificationOpen(true)}
+          >
+            <FaBell />
+            {unreadCount > 0 && (
+              <span className="dashboard-topbar-badge">
+                {unreadCount}
+              </span>
+            )}
+          </button>
 
-        <button className="dashboard-topbar-icon">
-          <FaBell />
-          <span className="dashboard-topbar-badge">3</span>
-        </button>
+          <ThemeToggle />
 
-        <ThemeToggle />
+          <button
+            className="dashboard-topbar-icon"
+            onClick={onOpenProfile}
+          >
+            <FaCircleUser />
+          </button>
+        </div>
+      </Header>
 
-        <button
-          className="dashboard-topbar-icon"
-          onClick={() => {
-            console.log("profile clicked");
-            onOpenProfile?.();
-          }}
-        >
-          <FaCircleUser />
-        </button>
-      </div>
-    </div>
+      <NotificationDrawer
+        isOpen={isNotificationOpen}
+        onClose={() => setIsNotificationOpen(false)}
+        notifications={notifications}
+        setNotifications={setNotifications}
+      />
+    </>
   );
 };
 

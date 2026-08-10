@@ -23,8 +23,8 @@
   height: 48px;
   padding: 0 16px;
   border: 1px solid var(--border);
-  border-radius: 14px;
-  background: var(--bg-primary);
+  border-radius: 6px;
+  background: white;
   color: var(--text-primary);
   font-size: 14px;
   outline: none;
@@ -48,7 +48,7 @@
   padding: 0 14px;
   border: 1px solid var(--border);
   border-radius: 14px;
-  background: var(--bg-primary);
+  background: white;
   color: var(--text-primary);
   font-size: 14px;
   outline: none;
@@ -88,8 +88,8 @@
   height: 36px;
   padding: 0 16px;
   border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--bg-primary);
+  border-radius: 6px;
+  background: white;
   color: var(--text-secondary);
   font-size: 13px;
   font-weight: 600;
@@ -132,4 +132,52 @@
   .billing-status-chips {
     width: 100%;
   }
+}
+
+/* ==========================
+   Dark mode
+========================== */
+
+.dark .billing-toolbar {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.dark .billing-toolbar-search input,
+.dark .billing-toolbar-department select {
+  background: #0f172a;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+.dark .billing-toolbar-search input::placeholder {
+  color: #94a3b8;
+}
+
+.dark .billing-toolbar-search input:focus,
+.dark .billing-toolbar-department select:focus {
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.18);
+}
+
+.dark .billing-toolbar-label {
+  color: #cbd5e1;
+}
+
+.dark .billing-status-chip {
+  background: #0f172a;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+.dark .billing-status-chip:hover {
+  border-color: #14b8a6;
+  color: #5eead4;
+}
+
+.dark .billing-status-chip.active {
+  background: #14b8a6;
+  border-color: #14b8a6;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(20, 184, 166, 0.2);
 }

@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0;
   background: rgba(15, 23, 42, 0.45);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,9 +14,8 @@
   width: 100%;
   max-width: 440px;
   background: var(--bg-secondary);
-  border: 1px solid var(--border);
   border-radius: 24px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
   overflow: hidden;
 }
 
@@ -25,7 +24,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 22px 24px;
-  background: #0f766e;
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
 }
 
 .profile-header-brand {
@@ -50,7 +49,7 @@
 .profile-header-brand p {
   margin: 4px 0 0;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .profile-modal-close {
@@ -58,19 +57,17 @@
   height: 38px;
   border: none;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.15);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .profile-modal-close:hover {
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.25);
   transform: rotate(90deg);
 }
 
@@ -87,21 +84,15 @@
   width: 92px;
   height: 92px;
   border-radius: 999px;
-  background: linear-gradient(
-    135deg,
-    #0f766e,
-    #14b8a6
-  );
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 16px;
-  box-shadow: 0 10px 24px
-    rgba(15, 118, 110, 0.22);
+  box-shadow: 0 12px 28px rgba(15, 118, 110, 0.25);
   font-size: 38px;
   font-weight: 800;
-  letter-spacing: 0.5px;
 }
 
 .profile-avatar-section h2 {
@@ -116,7 +107,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 10px;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 999px;
   background: rgba(15, 118, 110, 0.12);
   color: #0f766e;
@@ -157,10 +148,56 @@
   font-size: 14px;
 }
 
+.profile-phone-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-phone-input {
+  width: 100%;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0 12px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+}
+
+.profile-phone-input:focus {
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.12);
+}
+
+.profile-edit-btn {
+  width: 100%;
+  height: 48px;
+  margin-top: 24px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.profile-edit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(20, 184, 166, 0.25);
+}
+
 .profile-logout-btn {
   width: 100%;
   height: 48px;
-  margin-top: 28px;
+  margin-top: 14px;
   border: none;
   border-radius: 14px;
   background: #dc2626;
@@ -172,9 +209,7 @@
   justify-content: center;
   gap: 10px;
   cursor: pointer;
-  transition:
-    background 0.15s ease,
-    transform 0.12s ease;
+  transition: background 0.15s ease, transform 0.12s ease;
 }
 
 .profile-logout-btn:hover {
@@ -182,8 +217,12 @@
   transform: translateY(-1px);
 }
 
+.dark .profile-modal {
+  background: #1e293b;
+}
+
 .dark .profile-modal-header {
-  background: #14b8a6;
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
 }
 
 .dark .profile-role-badge {
@@ -191,13 +230,25 @@
   color: #5eead4;
 }
 
+.dark .profile-info-item {
+  background: #0f172a;
+  border-color: #334155;
+}
+
 .dark .profile-info-item svg {
   color: #5eead4;
+}
+
+.dark .profile-phone-input {
+  background: #111827;
+  border-color: #334155;
+  color: #f8fafc;
 }
 
 @media (max-width: 480px) {
   .profile-modal {
     max-width: 100%;
+    border-radius: 20px;
   }
 
   .profile-modal-body {
@@ -207,5 +258,6 @@
   .profile-avatar {
     width: 84px;
     height: 84px;
+    font-size: 34px;
   }
 }

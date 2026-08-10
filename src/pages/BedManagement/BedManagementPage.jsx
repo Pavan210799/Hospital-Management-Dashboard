@@ -286,3 +286,5 @@ const BedManagementPage = ({ setSidebarOpen, onOpenProfile }) => {
     </PageTransition>
   );
 };
+
+export default BedManagementPage;

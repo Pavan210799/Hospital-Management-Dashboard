@@ -1,0 +1,92 @@
+.dashboard-page{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:32px;
+}
+
+.dashboard-page-header{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+.dashboard-page-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+}
+
+.dashboard-mobile-header{
+
+    display:none;
+}
+
+/* ==========================
+   Charts Row
+========================== */
+
+.dashboard-charts-row{
+
+    display:grid;
+
+    grid-template-columns:1.75fr 1fr;
+
+    gap:24px;
+
+    align-items:stretch;
+}
+
+.dashboard-charts-row > *{
+
+    height:100%;
+}
+
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width:992px){
+
+    .dashboard-charts-row{
+
+        grid-template-columns:1fr;
+
+    }
+}
+
+@media (max-width:768px){
+
+    .dashboard-mobile-header{
+
+        display:block;
+    }
+}
+
+.dashboard-bottom-row{
+
+    display:grid;
+
+    grid-template-columns:1fr 1.75fr;
+
+    gap:24px;
+
+    align-items:stretch;
+}
+
+@media(max-width:992px){
+
+    .dashboard-bottom-row{
+
+        grid-template-columns:1fr;
+    }
+
+}

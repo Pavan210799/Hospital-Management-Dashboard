@@ -1,0 +1,339 @@
+.doctors-table-card {
+  background: var(--bg-secondary);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.doctors-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.doctors-table-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.doctors-table-header p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.doctors-table-add-btn {
+  height: 48px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 14px;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(15, 118, 110, 0.18);
+  transition: all 0.15s ease;
+}
+
+.doctors-table-add-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.doctors-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+.doctors-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 1000px;
+}
+
+.doctors-table thead th {
+  text-align: left;
+  padding: 14px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #0f766e;
+  border-bottom: 1px solid #0b5e58;
+  white-space: nowrap;
+}
+.dark .doctors-table thead th {
+    background:#14B8A6;
+}
+
+.doctors-table thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.doctors-table thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.doctors-table tbody tr {
+  transition: none;
+}
+
+.doctors-table tbody td {
+  padding: 16px;
+  font-size: 14px;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  background: var(--bg-secondary);
+  transition:
+    background-color 0.08s ease,
+    transform 0.08s ease;
+}
+
+.doctors-table tbody tr:hover td {
+  background: var(--bg-hover);
+  transform: translateY(-1px);
+}
+
+/* Doctor info */
+
+.doctor-info-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doctor-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.doctor-name {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.doctor-id {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* Status badges */
+
+.doctor-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.doctor-status.available {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.doctor-status.busy {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.doctor-status.on-leave {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Profile */
+
+.doctor-profile-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.doctor-profile-link:hover {
+  color: var(--primary-dark);
+}
+
+/* Actions */
+
+.doctors-actions-col {
+  width: 90px;
+}
+
+.doctors-actions-cell {
+  width: 90px;
+}
+
+.doctors-inline-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.doctors-action-icon {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.doctors-action-icon:hover {
+  transform: scale(1.1);
+}
+
+.doctors-action-icon.edit:hover {
+  color: var(--primary);
+  background: rgba(15, 118, 110, 0.08);
+}
+
+.doctors-action-icon.delete:hover {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+.doctors-action-divider {
+  color: var(--border);
+  font-size: 13px;
+}
+
+/* Empty state */
+
+.doctors-empty-state {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* Pagination */
+
+.doctors-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.doctors-pagination p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.doctors-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.doctors-pagination-controls button {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.doctors-pagination-controls button:hover:not(:disabled) {
+  background: var(--bg-hover);
+  border-color: var(--primary);
+}
+
+.doctors-pagination-controls button.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+.doctors-pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.doctors-pagination-ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+}
+.doctor-avatar-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .doctors-table-card {
+    padding: 18px;
+  }
+
+  .doctors-table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .doctors-table-add-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .doctors-pagination {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .doctors-pagination-controls {
+    width: 100%;
+  }
+}

@@ -1,0 +1,284 @@
+/* ==========================
+   Top Bar
+========================== */
+
+.dashboard-topbar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:24px;
+}
+.dark .dashboard-page-title{
+
+    color: #ffffff;
+}
+
+.dashboard-page-title{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+    letter-spacing:-0.5px;
+}
+
+/* ==========================
+   Left Section
+========================== */
+
+.dashboard-topbar-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+}
+
+
+/* ==========================
+   Actions
+========================== */
+
+.dashboard-topbar-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+}
+
+/* ==========================
+   Icon Button
+========================== */
+
+.dashboard-topbar-icon{
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--bg-secondary);
+
+    color:var(--text-primary);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    cursor:pointer;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:all .25s ease;
+}
+
+.dashboard-topbar-icon svg{
+
+    font-size:20px;
+}
+
+.dashboard-topbar-icon:hover{
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    transform:translateY(-2px);
+}
+
+/* ==========================
+   Notification Badge
+========================== */
+
+.dashboard-topbar-badge{
+
+    position:absolute;
+
+    top:-2px;
+
+    right:-2px;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:#ef4444;
+
+    color:#ffffff;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:2px solid var(--bg-primary);
+}
+
+.dashboard-topbar-date{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-end;
+
+    justify-content:center;
+    
+    margin-top: 4px;
+
+    margin-right:12px;
+
+    line-height:1.15;
+
+    min-width:110px;
+
+    font-weight:700;
+}
+
+.dashboard-topbar-day{
+
+    font-size:13px;
+
+    font-weight:700;
+
+    color:#0F766E;
+}
+
+.dashboard-topbar-full-date{
+
+    font-size:11px;
+
+    color:var(--text-secondary);
+
+    margin-top:2px;
+}
+
+@media (max-width:768px){
+
+    .dashboard-topbar-date{
+
+        display:none;
+    }
+}
+
+.dark .dashboard-topbar-day {
+    color : #10B981;
+}
+
+
+
+
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width:992px){
+
+    .dashboard-topbar{
+
+        gap:20px;
+    }
+
+    .dashboard-topbar-actions{
+
+        gap:14px;
+    }
+
+    .dashboard-topbar-day{
+
+        font-size:13px;
+    }
+
+    .dashboard-topbar-full-date{
+
+        font-size:12px;
+    }
+
+    .dashboard-page-title{
+
+    font-size:24px;
+}
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width:768px){
+
+    .dashboard-topbar{
+
+        display:flex;
+
+        flex-direction:row;
+
+        align-items:center;
+
+        justify-content:space-between;
+
+        gap:16px;
+    }
+
+    .dashboard-topbar-left{
+
+        display:flex;
+
+        align-items:center;
+
+        gap:0;
+    }
+
+    .dashboard-topbar-date{
+
+        display:none;
+    }
+
+    .dashboard-topbar-actions{
+
+        display:flex;
+
+        align-items:center;
+
+        gap:12px;
+    }
+
+    .dashboard-topbar-icon{
+
+        width:44px;
+
+        height:44px;
+    }
+
+    .dashboard-topbar-icon svg{
+
+        font-size:18px;
+    }
+
+    .dashboard-page-title{
+
+        display:none;
+    }
+}

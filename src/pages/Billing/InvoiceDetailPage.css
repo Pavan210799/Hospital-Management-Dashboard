@@ -1,0 +1,379 @@
+.invoice-page {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  padding: 32px;
+}
+
+.invoice-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.invoice-back-btn,
+.invoice-print-btn {
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.invoice-back-btn {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.invoice-back-btn:hover {
+  background: var(--bg-hover);
+}
+
+.invoice-print-btn {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.invoice-print-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.invoice-paper {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  color: #111827;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+}
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.invoice-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.invoice-logo-image {
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+}
+
+.invoice-brand h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.invoice-brand p {
+  margin: 6px 0 4px;
+  color: #0f766e;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.invoice-brand span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.invoice-hospital-address {
+  text-align: right;
+  font-size: 14px;
+}
+
+.invoice-hospital-address strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #0f172a;
+  font-size: 16px;
+}
+
+.invoice-hospital-address p {
+  margin: 3px 0;
+  color: #475569;
+}
+
+.invoice-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 28px 0;
+}
+
+.invoice-title {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.invoice-title h2 {
+  margin: 0;
+  font-size: 30px;
+  color: #0f766e;
+  font-weight: 800;
+}
+
+.invoice-title p {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.invoice-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.invoice-meta div {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.invoice-meta span {
+  display: block;
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.invoice-meta strong {
+  color: #0f172a;
+  font-size: 16px;
+}
+
+.invoice-section {
+  margin-bottom: 32px;
+}
+
+.invoice-section h3 {
+  margin: 0 0 18px;
+  font-size: 20px;
+  color: #0f172a;
+}
+
+.invoice-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.invoice-details-grid div {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.invoice-details-grid span {
+  display: block;
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.invoice-details-grid strong {
+  color: #0f172a;
+}
+
+.invoice-summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.invoice-summary-table thead th {
+  background: #0f766e;
+  color: #ffffff;
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.invoice-summary-table tbody td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.invoice-summary-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.invoice-total-row td {
+  background: #f0fdfa;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.invoice-footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.invoice-amount-words {
+  flex: 1;
+}
+
+.invoice-amount-words span {
+  display: block;
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.invoice-amount-words strong {
+  color: #0f172a;
+}
+
+.invoice-signature {
+  text-align: center;
+  min-width: 240px;
+}
+
+.invoice-signature-image {
+  width: 170px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto -8px;
+}
+
+.invoice-signature-line {
+  width: 180px;
+  border-top: 2px solid #0f172a;
+  margin: 0 auto 12px;
+}
+
+.invoice-signature strong {
+  display: block;
+  color: #0f172a;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.invoice-signature p {
+  margin: 0;
+  color: #475569;
+  font-size: 14px;
+}
+
+.invoice-signature span {
+  display: block;
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.invoice-not-found {
+  max-width: 520px;
+  margin: 80px auto;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+}
+
+.invoice-not-found h2 {
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.invoice-not-found button {
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 12px;
+  border: none;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .invoice-page {
+    padding: 16px;
+  }
+
+  .invoice-paper {
+    padding: 24px;
+  }
+
+  .invoice-header,
+  .invoice-footer {
+    flex-direction: column;
+  }
+
+  .invoice-logo-section {
+    align-items: flex-start;
+  }
+
+  .invoice-logo-image {
+    width: 64px;
+    height: 64px;
+  }
+
+  .invoice-brand h1 {
+    font-size: 24px;
+  }
+
+  .invoice-hospital-address {
+    text-align: left;
+    margin-top: 16px;
+  }
+
+  .invoice-meta,
+  .invoice-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .invoice-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .invoice-back-btn,
+  .invoice-print-btn {
+    width: 100%;
+  }
+}
+
+@media print {
+  .invoice-actions {
+    display: none;
+  }
+
+  .invoice-page {
+    background: #ffffff;
+    padding: 0;
+  }
+
+  .invoice-paper {
+    box-shadow: none;
+    border-radius: 0;
+    max-width: 100%;
+    padding: 32px;
+  }
+}

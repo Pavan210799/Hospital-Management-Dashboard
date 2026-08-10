@@ -1,0 +1,108 @@
+.app {
+    display: flex;
+    min-height: 100vh;
+    background: var(--bg-primary);
+}
+
+.main-content {
+    background: var(--bg-primary);
+    flex: 1;
+    padding: 32px;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+.auth-main-content {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width: 992px) {
+
+    .main-content {
+        padding: 24px;
+    }
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 768px) {
+
+    .main-content {
+        padding: 20px;
+    }
+}
+
+/* Shared modal header style */
+
+.patient-modal-header,
+.history-modal-header,
+.diagnosis-modal-header,
+.delete-modal-header  {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px;
+  background: #0f766e; /* deep teal for light mode */
+  border-bottom: none;
+}
+
+.patient-modal-header h2,
+.history-modal-header h2,
+.diagnosis-modal-header h2,
+.delete-modal-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.patient-modal-header p,
+.history-modal-header p,
+.diagnosis-modal-header p,
+.delete-modal-header p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.patient-modal-close,
+.history-modal-close,
+.diagnosis-modal-close,
+.delete-modal-close {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.patient-modal-close:hover,
+.history-modal-close:hover,
+.diagnosis-modal-close:hover,
+.delete-modal-close:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: rotate(90deg);
+}
+
+/* Dark mode - use the dashboard green */
+
+.dark .patient-modal-header,
+.dark .history-modal-header,
+.dark .diagnosis-modal-header,
+.dark .delete-modal-header {
+  background: #14B8A6;
+}

@@ -1,0 +1,171 @@
+.dashboard-department-chart{
+
+    background:var(--bg-secondary);
+
+    border-radius:22px;
+
+    padding:22px;
+
+    box-shadow:var(--shadow-md);
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+}
+
+.dashboard-department-header{
+
+    margin-bottom:18px;
+}
+
+.dashboard-department-header h3{
+
+    margin:0;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+}
+
+.dashboard-department-header p{
+
+    margin-top:6px;
+
+    font-size:14px;
+
+    color:var(--text-secondary);
+}
+
+/* ==========================
+   Chart
+========================== */
+
+.dashboard-department-body{
+
+    flex:1;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:360px;
+}
+
+.dashboard-department-body .recharts-responsive-container{
+
+    width:100% !important;
+
+    height:100% !important;
+}
+
+/* ==========================
+   Center Content
+========================== */
+
+.dashboard-department-center{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    pointer-events:none;
+
+    width:160px;
+}
+
+.dashboard-department-center h4{
+
+    margin:0 0 8px;
+
+    font-size:16px;
+
+    font-weight:600;
+}
+
+.dashboard-department-center h2{
+
+    margin:0;
+
+    font-size:56px;
+
+    font-weight:700;
+
+    line-height:1;
+
+    color:var(--text-primary);
+}
+
+.dashboard-department-center span{
+
+    margin-top:8px;
+
+    font-size:15px;
+
+    color:var(--text-secondary);
+}
+
+/* ==========================
+   Tablet
+========================== */
+
+@media(max-width:992px){
+
+    .dashboard-department-body{
+
+        min-height:320px;
+    }
+
+    .dashboard-department-center h2{
+
+        font-size:50px;
+    }
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media(max-width:768px){
+
+    .dashboard-department-body{
+
+        min-height:280px;
+    }
+
+    .dashboard-department-center{
+
+        width:130px;
+    }
+
+    .dashboard-department-center h2{
+
+        font-size:42px;
+    }
+
+    .dashboard-department-center h4{
+
+        font-size:14px;
+    }
+}

@@ -1,0 +1,254 @@
+.bed-management-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bed-management-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bed-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.bed-stat-card {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--shadow-sm);
+  min-height: 72px;
+  cursor: pointer;
+}
+
+.bed-stat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.bed-stat-content h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.bed-stat-content p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.2;
+}
+
+.ward-overview-section,
+.bed-layout-placeholder {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.ward-section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.section-header {
+  margin-bottom: 0;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.section-header p {
+  margin: 6px 0 0;
+  color: var(--text-secondary);
+}
+
+.bed-admit-btn {
+  height: 48px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 14px;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(15, 118, 110, 0.18);
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.bed-admit-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(15, 118, 110, 0.22);
+}
+
+.ward-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.ward-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.ward-card.active {
+  background: #0f766e;
+  border-color: #0f766e;
+}
+
+.ward-card.active .ward-card-header h4,
+.ward-card.active .ward-card-header span,
+.ward-card.active .ward-card-footer label,
+.ward-card.active .ward-card-footer strong {
+  color: #ffffff;
+}
+
+.ward-card.active .ward-progress {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.ward-card.active .ward-progress-fill {
+  background: #ffffff;
+}
+
+.ward-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.ward-card-header h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.ward-card-header span {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.ward-progress {
+  width: 100%;
+  height: 10px;
+  background: rgba(15, 118, 110, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.ward-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0f766e, #14b8a6);
+  border-radius: 999px;
+}
+
+.ward-card-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.ward-card-footer label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.ward-card-footer strong {
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.dark .ward-card.active {
+  background: #14b8a6;
+  border-color: #14b8a6;
+}
+
+.dark .ward-progress {
+  background: rgba(20, 184, 166, 0.12);
+}
+
+.dark .ward-progress-fill {
+  background: linear-gradient(90deg, #14b8a6, #2dd4bf);
+}
+
+@media (max-width: 1200px) {
+  .bed-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ward-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .bed-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ward-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ward-card-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .ward-overview-section,
+  .bed-layout-placeholder {
+    padding: 20px;
+  }
+
+  .ward-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bed-admit-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,279 @@
+.patient-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1200;
+}
+
+.patient-modal {
+  width: 100%;
+  max-width: 760px;
+  max-height: 88vh;
+  background: var(--bg-secondary);
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+}
+
+.dark .patient-modal {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.patient-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px;
+  background: #0f766e;
+  color: #ffffff;
+  border-radius: 24px 24px 0 0;
+}
+
+.dark .patient-modal-header {
+  background: #047857;
+}
+
+.patient-modal-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Animated circular close button */
+.patient-modal-close {
+  width: 40px;
+  height: 40px;
+  border: 1px;
+  border-color: #ffffff;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.patient-modal-close::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.18);
+  transform: scale(0);
+  transition: transform 0.28s ease;
+}
+
+.patient-modal-close:hover::before {
+  transform: scale(1);
+}
+
+.patient-modal-close:hover {
+  transform: rotate(90deg);
+}
+
+.patient-modal-close svg {
+  position: relative;
+  z-index: 1;
+  font-size: 18px;
+}
+
+.dark .patient-modal-close {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.dark .patient-modal-close::before {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.dark .patient-modal-close:hover {
+  color: #ffffff;
+}
+
+.patient-form {
+  overflow-y: auto;
+  padding: 24px;
+}
+
+
+.patient-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.patient-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.patient-form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.patient-form-group input,
+.patient-form-group select,
+.patient-form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.patient-form-group input,
+.patient-form-group select {
+  height: 46px;
+  padding: 0 14px;
+}
+
+.patient-form-group textarea {
+  padding: 12px 14px;
+  min-height: 110px;
+  resize: vertical;
+}
+
+.patient-form-group input:focus,
+.patient-form-group select:focus,
+.patient-form-group textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+}
+
+.patient-form-full {
+  grid-column: 1 / -1;
+}
+
+.patient-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.patient-btn-secondary,
+.patient-btn-primary {
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.patient-btn-secondary {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.patient-btn-secondary:hover {
+  background: var(--bg-hover);
+}
+
+.patient-btn-primary {
+  border: none;
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.patient-btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.doctor-search-group {
+  position: relative;
+}
+
+.doctor-search-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 20;
+}
+
+.doctor-search-item {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.doctor-search-item:hover {
+  background: var(--bg-hover);
+}
+
+.doctor-search-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.doctor-search-dept {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.doctor-search-empty {
+  padding: 14px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .patient-modal {
+    max-width: 100%;
+    border-radius: 16px;
+  }
+
+  .patient-modal-header {
+    border-radius: 16px 16px 0 0;
+  }
+
+  .patient-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .patient-btn-secondary,
+  .patient-btn-primary {
+    width: 100%;
+  }
+}

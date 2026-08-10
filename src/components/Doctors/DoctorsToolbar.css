@@ -1,0 +1,151 @@
+.doctors-toolbar-card {
+  background: var(--bg-secondary);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.doctors-toolbar-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.doctors-search-wrapper {
+  flex: 1;
+  min-width: 320px;
+  position: relative;
+}
+
+.doctors-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.doctors-search-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px 0 44px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.doctors-search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+}
+
+.doctors-toolbar-filter {
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+  min-width: 220px;
+  cursor: pointer;
+}
+
+.doctors-toolbar-divider {
+  height: 1px;
+  background: var(--border);
+}
+
+.doctors-toolbar-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -12px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.doctors-status-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.doctors-status-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-right: 4px;
+}
+
+.doctors-status-chip {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.doctors-status-chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.doctors-status-chip.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+.doctors-clear-filters {
+  border: none;
+  background: none;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.doctors-clear-filters:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .doctors-toolbar-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .doctors-search-wrapper {
+    min-width: 100%;
+  }
+
+  .doctors-toolbar-filter {
+    width: 100%;
+  }
+
+  .doctors-toolbar-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .doctors-status-filters {
+    width: 100%;
+  }
+}

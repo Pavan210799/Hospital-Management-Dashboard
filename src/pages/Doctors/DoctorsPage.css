@@ -1,0 +1,30 @@
+.doctors-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.doctors-page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.doctors-page-header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.doctors-page-header p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .doctors-page-header h1 {
+    font-size: 28px;
+  }
+}

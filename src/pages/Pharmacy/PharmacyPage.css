@@ -1,0 +1,11 @@
+.pharmacy-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pharmacy-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

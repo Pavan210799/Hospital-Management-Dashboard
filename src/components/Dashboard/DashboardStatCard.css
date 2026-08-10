@@ -1,0 +1,332 @@
+.dashboard-stat-card {
+
+    background: var(--bg-secondary);
+
+    border: 0;
+
+    border-radius: 20px;
+
+    padding: 22px;
+
+    height: 150px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        box-shadow .15s ease,
+        filter .15s ease;
+}
+
+.dashboard-stat-card:hover{
+
+    box-shadow: 0 18px 42px rgba(15,23,42,.12);
+
+    filter: brightness(1.01);
+}
+
+/* ==========================
+   Top Section
+========================== */
+
+.dashboard-stat-card-top{
+
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:58px 1fr;
+
+    gap:18px;
+
+    align-items:center;
+}
+
+/* ==========================
+   Icon
+========================== */
+
+.dashboard-stat-card-icon{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(16,185,129,.16),
+        rgba(16,185,129,.26)
+    );
+
+    color:var(--primary);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:0 8px 18px rgba(16,185,129,.12);
+
+    transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+}
+
+.dashboard-stat-card-icon svg{
+
+    font-size:24px;
+}
+
+.dashboard-stat-card:hover .dashboard-stat-card-icon{
+
+    transform:scale(1.1) rotate(-4deg);
+
+    box-shadow:0 12px 24px rgba(16,185,129,.20);
+}
+
+/* ==========================
+   Content
+========================== */
+
+.dashboard-stat-card-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    min-width:0;
+}
+
+.dashboard-stat-card-content h2{
+
+    margin:0;
+
+    font-size:32px;
+
+    font-weight:700;
+
+    line-height:1;
+
+    color:var(--text-primary);
+}
+
+.dashboard-stat-card-content p{
+
+    margin-top:6px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    line-height:1.35;
+
+    color:var(--text-secondary);
+}
+
+/* ==========================
+   Bottom Section
+========================== */
+
+.dashboard-stat-card-growth{
+
+    margin-left:-22px;
+
+    margin-right:-22px;
+
+    margin-bottom:-22px;
+
+    margin-top:18px;
+
+    padding:14px 22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    border-top:none;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+}
+
+.dashboard-stat-card-growth svg{
+
+    font-size:18px;
+
+    flex-shrink:0;
+}
+
+
+
+.dashboard-stat-card:hover .dashboard-stat-card-growth{
+
+    background:rgba(16,185,129,.08);
+    color : var(--primary);
+}
+
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width:992px){
+
+    .dashboard-stat-card{
+
+        height:165px;
+    }
+
+    .dashboard-stat-card-top{
+
+        grid-template-columns:56px 1fr;
+    }
+
+    .dashboard-stat-card-icon{
+
+        width:56px;
+
+        height:56px;
+    }
+
+    .dashboard-stat-card-content h2{
+
+        font-size:30px;
+    }
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width:768px){
+
+    .dashboard-stat-card{
+
+        height:auto;
+
+        min-height:160px;
+
+        padding:20px;
+    }
+
+    .dashboard-stat-card-top{
+
+        grid-template-columns:54px 1fr;
+
+        gap:16px;
+    }
+
+    .dashboard-stat-card-icon{
+
+        width:54px;
+
+        height:54px;
+
+        border-radius:16px;
+    }
+
+    .dashboard-stat-card-icon svg{
+
+        font-size:22px;
+    }
+
+    .dashboard-stat-card-content h2{
+
+        font-size:28px;
+    }
+
+    .dashboard-stat-card-content p{
+
+        font-size:14px;
+    }
+
+    .dashboard-stat-card-growth{
+
+        margin-left:-20px;
+
+        margin-right:-20px;
+
+        margin-bottom:-20px;
+
+        padding:14px 20px;
+    }
+}
+
+/* ==========================
+   Danger Card
+========================== */
+
+.dashboard-stat-card-danger .dashboard-stat-card-icon{
+
+    background:linear-gradient(
+        135deg,
+        #FEE2E2,
+        #FECACA
+    );
+
+    color:#B91C1C;
+
+    box-shadow:0 8px 12px rgba(185,28,28,.18);
+}
+
+.dashboard-stat-card-danger .dashboard-stat-card-growth{
+
+    background:linear-gradient(
+        135deg,
+        #991B1B,
+        #7F1D1D
+    );
+
+    color:#ffffff;
+}
+
+/* ==========================
+   Danger Card Hover
+========================== */
+
+.dashboard-stat-card-danger:hover .dashboard-stat-card-growth{
+
+    background:#FEF2F2;
+
+    color:#B91C1C;
+    
+}
+
+.dashboard-stat-card-danger:hover .dashboard-stat-card-icon{
+
+    background:linear-gradient(
+        135deg,
+        #FEE2E2,
+        #FECACA
+    );
+
+    color:#B91C1C;
+
+    transform:scale(1.1) rotate(-4deg);
+
+    box-shadow:0 12px 24px rgba(185,28,28,.20);
+}

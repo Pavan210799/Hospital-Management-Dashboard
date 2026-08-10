@@ -22,7 +22,7 @@ import BillingPage from "./pages/Billing/BillingPage";
 import InvoiceDetailPage from "./pages/Billing/InvoiceDetailPage";
 import ProfileModal from "./components/Profile/ProfileModal";
 import SignupSuccessPage from "./pages/Auth/SignupSuccessPage";
-import ForgotPasswordPage from "./pages/auth/ForgotPasswordPage";
+import ForgotPasswordPage from "./pages/Auth/ForgotPasswordPage";
 import ResetPasswordPage from "./pages/Auth/ResetPasswordPage";
 
 import ScrollToTop from "./components/common/ScrollToTop";
